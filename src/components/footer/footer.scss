@@ -1,3 +1,18 @@
 .footer{
-    background-color: purple;
-}
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 30px;
+  
+    span{
+        // first item in the span
+        &:first-child{
+            font-weight: bold;
+        }
+        
+        // last item in the span
+        &:last-child{
+            font-size: 14px;
+        }
+    }
+  }

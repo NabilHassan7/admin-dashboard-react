@@ -4,7 +4,8 @@ import './footer.scss'
 const Footer = () => {
     return (
         <div className='footer'>
-            Footer
+            <span>Nabil</span>
+            <span>All Copyrights belong to their respective users</span>
         </div>
     );
 };
