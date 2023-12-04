@@ -8,11 +8,10 @@ import Products from "./pages/products/Products"
 import Users from "./pages/users/Users"
 
 // importing React Router Dom
-import {
-  createBrowserRouter,
-  RouterProvider,
-  Outlet
-} from "react-router-dom";
+import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
+
+// importing Global CSS File
+import "./styles/global.scss"
 
 // Layout View - To dynamically load pages
 function App() {
