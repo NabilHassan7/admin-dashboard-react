@@ -1,7 +1,10 @@
 // importing the components
+import BarChartBox from '../../components/barChartBox/BarChartBox';
 import ChartBox from '../../components/chartBox/ChartBox';
 import TopBox from '../../components/topBox/TopBox';
-import { chartBoxConversion, chartBoxProduct, chartBoxRevenue, chartBoxUser } from '../../data';
+
+// importing the data from data.ts
+import { barChartBoxRevenue, barChartBoxVisit, chartBoxConversion, chartBoxProduct, chartBoxRevenue, chartBoxUser } from '../../data';
 
 // importing the css file
 import './home.scss'
@@ -32,10 +35,10 @@ const Home = () => {
           
         </div>
         <div className="box box8">
-          
+          <BarChartBox {...barChartBoxVisit} />
         </div>
         <div className="box box9">
-          
+          <BarChartBox {...barChartBoxRevenue} />
         </div>
       </div>
     );
