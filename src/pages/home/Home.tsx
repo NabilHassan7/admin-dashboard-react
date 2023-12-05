@@ -1,6 +1,7 @@
 // importing the components
 import BarChartBox from '../../components/barChartBox/BarChartBox';
 import ChartBox from '../../components/chartBox/ChartBox';
+import PieChartBox from '../../components/pieChartBox/PieChartBox';
 import TopBox from '../../components/topBox/TopBox';
 
 // importing the data from data.ts
@@ -23,7 +24,7 @@ const Home = () => {
           <ChartBox {...chartBoxProduct}></ChartBox>
         </div>
         <div className="box box4">
-          
+          <PieChartBox></PieChartBox>
         </div>
         <div className="box box5">
           <ChartBox {...chartBoxRevenue}></ChartBox>
