@@ -6,3 +6,5 @@ Steps in order
 3. npm install sass
 4. npm install react-router-dom
 5. npm install recharts
+6. npm install @mui/x-data-grid
+7. npm install @mui/material @emotion/react @emotion/styled
