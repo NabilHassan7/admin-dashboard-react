@@ -1,5 +1,11 @@
+// importing from react
+import {useState} from 'react';
 
+// importing the components
 import DataTable from '../../components/dataTable/DataTable';
+import Add from '../../components/add/Add';
+
+// importing from material UI
 import { GridColDef } from "@mui/x-data-grid";
 
 // importing the css
@@ -8,9 +14,13 @@ import './users.scss'
 // importing the user data from local file
 import { userRows } from '../../data';
 
-
+// column defintions for the Material UI datagrid
 const columns: GridColDef[] = [
-    { field: "id", headerName: "ID", width: 90 },
+    { 
+        field: "id", 
+        headerName: "ID", 
+        width: 90 
+    },
     {
       field: "img",
       headerName: "Avatar",
@@ -71,14 +81,23 @@ const columns: GridColDef[] = [
 // ];
 
 const Users = () => {
+
+    // useState for the add modal -> default value is false
+    const [open, setOpen] = useState(false)
+
     return (
         <div className="users">
             <div className="info">
                 <h1>Users</h1>
-                <button>Add new user</button>
+                {/* opens the add modal on click */}
+                <button onClick={()=>setOpen(true)}>Add new user</button>
             </div>
             {/* passing the data as props to display dynamically */}
             <DataTable slug="users" columns={columns} rows={userRows}></DataTable>
+
+            {/* if open show add component */}
+            {/* passing the values to child component */}
+            {open && <Add slug="user" columns={columns} setOpen={setOpen}></Add>}
         </div>
     );
 };
