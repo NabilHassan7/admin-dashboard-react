@@ -1,11 +1,15 @@
+// importing the components
+import TopBox from '../../components/topBox/TopBox';
+
 // importing the css file
 import './home.scss'
 
 const Home = () => {
     return (
       <div className="home">
+        {/* Most recent order */}
         <div className="box box1">
-          
+          <TopBox></TopBox>
         </div>
         <div className="box box2">
           
