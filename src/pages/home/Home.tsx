@@ -1,5 +1,7 @@
 // importing the components
+import ChartBox from '../../components/chartBox/ChartBox';
 import TopBox from '../../components/topBox/TopBox';
+import { chartBoxConversion, chartBoxProduct, chartBoxRevenue, chartBoxUser } from '../../data';
 
 // importing the css file
 import './home.scss'
@@ -12,19 +14,19 @@ const Home = () => {
           <TopBox></TopBox>
         </div>
         <div className="box box2">
-          
+          <ChartBox {...chartBoxUser}></ChartBox>
         </div>
         <div className="box box3">
-          
+          <ChartBox {...chartBoxProduct}></ChartBox>
         </div>
         <div className="box box4">
           
         </div>
         <div className="box box5">
-          
+          <ChartBox {...chartBoxRevenue}></ChartBox>
         </div>
         <div className="box box6">
-          
+          <ChartBox {...chartBoxConversion}></ChartBox>
         </div>
         <div className="box box7">
           
