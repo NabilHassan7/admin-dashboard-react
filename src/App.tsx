@@ -6,6 +6,8 @@ import Home from "./pages/home/Home"
 import Login from "./pages/login/Login";
 import Products from "./pages/products/Products"
 import Users from "./pages/users/Users"
+import User from "./pages/user/User";
+import Product from "./pages/product/Product";
 
 // importing React Router Dom
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
@@ -54,9 +56,19 @@ function App() {
           path: "/users",
           element: <Users></Users>
         },
+        // for a single specific user
+        {
+          path: "/users/:id",
+          element: <User></User>
+        },
         {
           path: "/products",
           element: <Products></Products>
+        },
+        // for a single specific product
+        {
+          path: "/products/:id",
+          element: <Product></Product>
         },
       ]
     },
