@@ -7,6 +7,10 @@ import './dataTable.scss'
 // importing from react router dom
 import { Link } from "react-router-dom";
 
+// USE WHEN USING API
+// importing from react query
+import { useQueryClient, useMutation } from "react-query";
+
 // TS props attributes
 type Props ={
     columns: GridColDef[];
@@ -16,11 +20,27 @@ type Props ={
 
 // receiving data as props to display dynamically
 const DataTable = (props: Props) => {
+
+    // USE WHEN USING THE API
+    // creating the query client
+    const queryClient = useQueryClient();
+    // mutation to delete users and products
+    const mutation = useMutation({
+        mutationFn: (id: number) => {
+            return fetch(`http://localhost:5000/${props.slug}/${id}`, {
+                method: "delete",
+            });
+        },
+        onSuccess: ()=>{
+            // refreshing the page
+            // slug used to make the component generic
+            queryClient.invalidateQueries([`all${props.slug}`]);
+        }
+    });
     // Delete CRUD function
     const handleDelete = (id: number) =>{
         //delete the item
-        //axios.delete(`/api/${slug}/id`) -> example of 
-        console.log(id + " has been deleted");
+        mutation.mutate(id)
     }
 
     // column definitions

@@ -15,6 +15,12 @@ import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 // importing Global CSS File
 import "./styles/global.scss"
 
+// importing from react Query
+import { QueryClientProvider, QueryClient } from "react-query";
+
+// initializing react query
+const queryClient = new QueryClient();
+
 // Layout View - To dynamically load pages
 function App() {
   const Layout = () => {
@@ -26,10 +32,11 @@ function App() {
             <Menu></Menu>
           </div>
           <div className="contentContainer">
-            {/* <QueryClientProvider client={queryClient}> */}
+            {/* react query wrapper */}
+            <QueryClientProvider client={queryClient}>
               {/* dynamically changes */}
               <Outlet></Outlet>
-            {/* </QueryClientProvider> */}
+            </QueryClientProvider>
           </div>
         </div>
         <Footer></Footer>

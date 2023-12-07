@@ -8,3 +8,4 @@ Steps in order
 5. npm install recharts
 6. npm install @mui/x-data-grid
 7. npm install @mui/material @emotion/react @emotion/styled
+8. npm install react-query

@@ -11,8 +11,13 @@ import { GridColDef } from "@mui/x-data-grid";
 // importing the css
 import './users.scss'
 
+// USE WHEN NOT USING API
 // importing the user data from local file
-import { userRows } from '../../data';
+// import { userRows } from '../../data';
+
+// USE WHEN USING API
+// importing from react query
+import { useQuery } from "react-query";
 
 // column defintions for the Material UI datagrid
 const columns: GridColDef[] = [
@@ -85,6 +90,15 @@ const Users = () => {
     // useState for the add modal -> default value is false
     const [open, setOpen] = useState(false)
 
+    // IF USING API CALL 
+    const { isLoading, data } = useQuery({
+      queryKey: ["allusers"],
+      queryFn: () =>
+        fetch("http://localhost:5000/users").then(
+          (res) => res.json()
+        ),
+    });
+
     return (
         <div className="users">
             <div className="info">
@@ -93,7 +107,16 @@ const Users = () => {
                 <button onClick={()=>setOpen(true)}>Add new user</button>
             </div>
             {/* passing the data as props to display dynamically */}
-            <DataTable slug="users" columns={columns} rows={userRows}></DataTable>
+
+            {/* WHEN NOT USING API */}
+            {/* <DataTable slug="users" columns={columns} rows={userRows}></DataTable> */}
+
+            {/* WHEN USING API */}
+            {isLoading ? (
+              "Loading..."
+            ) : (
+              <DataTable slug="users" columns={columns} rows={data} />
+            )}
 
             {/* if open show add component */}
             {/* passing the values to child component */}
