@@ -37,13 +37,13 @@ export const menu = [
         {
           id: 3,
           title: "Orders",
-          url: "/orders",
+          url: "/",
           icon: "order.svg",
         },
         {
           id: 4,
           title: "Posts",
-          url: "/posts",
+          url: "/",
           icon: "post2.svg",
         },
       ],
@@ -73,7 +73,7 @@ export const menu = [
         {
           id: 4,
           title: "Calendar",
-          url: "/",
+          url: "/calendar",
           icon: "calendar.svg",
         },
       ],

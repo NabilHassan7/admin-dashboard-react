@@ -8,6 +8,7 @@ import Products from "./pages/products/Products"
 import Users from "./pages/users/Users"
 import User from "./pages/user/User";
 import Product from "./pages/product/Product";
+import Scheduler from "./pages/scheduler/Scheduler";
 
 // importing React Router Dom
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
@@ -76,6 +77,11 @@ function App() {
         {
           path: "/products/:id",
           element: <Product></Product>
+        },
+        // for the calendar
+        {
+          path: "/calendar",
+          element: <Scheduler></Scheduler>
         },
       ]
     },

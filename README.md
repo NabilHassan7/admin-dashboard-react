@@ -9,3 +9,9 @@ Steps in order
 6. npm install @mui/x-data-grid
 7. npm install @mui/material @emotion/react @emotion/styled
 8. npm install react-query
+9. npm install \
+  @fullcalendar/core \
+  @fullcalendar/daygrid \
+  @fullcalendar/timegrid \
+  @fullcalendar/list \
+  @fullcalendar/interaction
