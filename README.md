@@ -17,3 +17,4 @@ Steps in order
   @fullcalendar/interaction
 10. npm i react-simple-captcha
 11. npm install firebase
+12. npm install react-hook-form
