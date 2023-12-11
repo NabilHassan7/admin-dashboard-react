@@ -15,3 +15,5 @@ Steps in order
   @fullcalendar/timegrid \
   @fullcalendar/list \
   @fullcalendar/interaction
+10. npm i react-simple-captcha
+11. npm install firebase
