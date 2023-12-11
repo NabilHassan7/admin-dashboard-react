@@ -1,5 +1,5 @@
-// importing the outlet
-import { Outlet } from "react-router-dom";
+// importing from react router dom
+import { Outlet, useLocation } from "react-router-dom";
 
 // importing the components
 import Navbar from "../components/navbar/Navbar";
@@ -14,13 +14,18 @@ import { QueryClientProvider, QueryClient } from "react-query";
 const queryClient = new QueryClient();
 
 const Main = () => {
+
+    // Removing the header and footer from the login page
+    const location = useLocation();
+    const noHeaderFooter = location.pathname.includes('login') || location.pathname.includes('registration');
+
     const Layout = () => {
         return (
           <div className="main">
-            <Navbar></Navbar>
+            {noHeaderFooter || <Navbar></Navbar>}
             <div className="container">
               <div className="menuContainer">
-                <Menu></Menu>
+              {noHeaderFooter || <Menu></Menu>}
               </div>
               <div className="contentContainer">
                 {/* react query wrapper */}
@@ -30,7 +35,7 @@ const Main = () => {
                 </QueryClientProvider>
               </div>
             </div>
-            <Footer></Footer>
+            {noHeaderFooter || <Footer></Footer>}
           </div>
         );
       };
