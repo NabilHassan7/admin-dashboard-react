@@ -23,9 +23,11 @@ const Main = () => {
         return (
           <div className="main">
             {noHeaderFooter || <Navbar></Navbar>}
+            {/* <Navbar></Navbar> */}
             <div className="container">
               <div className="menuContainer">
-              {noHeaderFooter || <Menu></Menu>}
+                {noHeaderFooter || <Menu></Menu>}
+                {/* <Menu></Menu> */}
               </div>
               <div className="contentContainer">
                 {/* react query wrapper */}
@@ -36,6 +38,7 @@ const Main = () => {
               </div>
             </div>
             {noHeaderFooter || <Footer></Footer>}
+            {/* <Footer></Footer> */}
           </div>
         );
       };

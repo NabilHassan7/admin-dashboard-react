@@ -5,7 +5,7 @@ import { loadCaptchaEnginge, LoadCanvasTemplate, validateCaptcha } from 'react-s
 // import the css file
 import './login.scss'
 import { useContext, useEffect, useRef, useState } from 'react';
-// import { AuthContext } from '../../providers/AuthProvider';
+import { AuthContext } from '../../providers/AuthProvider';
 
 import { useForm } from "react-hook-form"
 import { useLocation, useNavigate } from 'react-router-dom';
@@ -46,8 +46,8 @@ const Login = () => {
         const form = event.target;
         const email = form.email.value;
         const password = form.password.value;
-        console.log(email);
-        console.log(password);
+        // console.log(email);
+        // console.log(password);
         signIn(email, password)
         .then((result : any) => {
             const user = result.user;
@@ -77,7 +77,7 @@ const Login = () => {
     const {createUser} = useContext(AuthContext);
 
     const onSubmit = (data : any) => {
-        console.log(data);
+        // console.log(data);
         createUser(data.email, data.password)
         .then( (result : any) => {
             const loggedUser = result.user;

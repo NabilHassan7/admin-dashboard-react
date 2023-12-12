@@ -1,3 +1,4 @@
+// Initialize Firebase
 import { initializeApp } from "firebase/app";
 
 // Environment Variables
@@ -10,5 +11,5 @@ const firebaseConfig = {
   appId: import.meta.env.VITE_appId
 };
 
-// Initialize Firebase
+// exporting the firebase app
 export const app = initializeApp(firebaseConfig);

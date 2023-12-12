@@ -7,10 +7,14 @@ import "./styles/global.scss"
 
 import { router } from "./Routes/Routes";
 
+import AuthProvider from './providers/AuthProvider';
+
 function App() {
   return (
     // calling the router
-    <RouterProvider router={router}></RouterProvider>
+    <AuthProvider>
+        <RouterProvider router={router}></RouterProvider>
+    </AuthProvider>
   )
 }
 

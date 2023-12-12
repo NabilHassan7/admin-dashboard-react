@@ -17,6 +17,10 @@ import Scheduler from "../pages/scheduler/Scheduler";
 
 export const router = createBrowserRouter([
     {
+      path: "/",
+      element: <Login></Login>
+    },
+    {
         path: "/",
         element: <Main></Main>,
         children: [
@@ -51,10 +55,11 @@ export const router = createBrowserRouter([
             path: "/calendar",
             element: <Scheduler></Scheduler>
           },
+          {
+            path: "/login",
+            element: <Login></Login>
+          }
         ]
       },
-      {
-        path: "/login",
-        element: <Login></Login>
-      }
+      
 ]);
