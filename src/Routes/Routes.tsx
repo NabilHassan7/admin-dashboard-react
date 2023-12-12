@@ -14,6 +14,9 @@ import User from "../pages/user/User";
 import Product from "../pages/product/Product";
 import Scheduler from "../pages/scheduler/Scheduler";
 import PrivateRoute from "./PrivateRoute";
+import New from "../pages/new/New";
+import { productInputs, userInputs } from "../data";
+import Forms from "../pages/forms/Forms";
 
 
 export const router = createBrowserRouter([
@@ -59,6 +62,20 @@ export const router = createBrowserRouter([
           {
             path: "/login",
             element: <Login></Login>
+          },
+          {
+            path: "/new",
+            element: <Forms></Forms>
+          },
+          {
+            path: "/new/users",
+            // @ts-ignore
+            element: <New inputs={userInputs} title="Add New User"></New>
+          },
+          {
+            path: "/new/products",
+            // @ts-ignore
+            element: <New inputs={productInputs} title="Add New Product"></New>
           }
         ]
       },
