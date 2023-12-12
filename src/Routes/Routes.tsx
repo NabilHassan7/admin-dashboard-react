@@ -13,6 +13,7 @@ import Users from "../pages/users/Users"
 import User from "../pages/user/User";
 import Product from "../pages/product/Product";
 import Scheduler from "../pages/scheduler/Scheduler";
+import PrivateRoute from "./PrivateRoute";
 
 
 export const router = createBrowserRouter([
@@ -53,7 +54,7 @@ export const router = createBrowserRouter([
           // for the calendar
           {
             path: "/calendar",
-            element: <Scheduler></Scheduler>
+            element: <PrivateRoute><Scheduler></Scheduler></PrivateRoute>
           },
           {
             path: "/login",
