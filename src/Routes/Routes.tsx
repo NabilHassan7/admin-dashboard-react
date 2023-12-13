@@ -21,6 +21,7 @@ import New from "../pages/new/New";
 import Forms from "../pages/forms/Forms";
 import Orders from "../pages/orders/Orders";
 import Order from "../pages/order/Order";
+import NewUser from "../pages/newUser/NewUser";
 
 
 export const router = createBrowserRouter([
