@@ -83,7 +83,7 @@ export const router = createBrowserRouter([
           {
             path: "/new/users",
             // @ts-ignore
-            element: <New inputs={userInputs} title="Add New User"></New>
+            element: <NewUser inputs={userInputs} title="Add New User"></NewUser>
           },
           {
             path: "/new/products",

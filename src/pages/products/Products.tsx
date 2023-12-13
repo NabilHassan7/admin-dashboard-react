@@ -1,18 +1,21 @@
 //importing from react
-import { useState } from 'react';
+// import { useState } from 'react';
 
 // importing the css
 import './products.scss'
 
 // importing the components
 import DataTable from '../../components/dataTable/DataTable';
-import Add from '../../components/add/Add';
+// import Add from '../../components/add/Add';
 
 // importing from Material UI
 import { GridColDef } from "@mui/x-data-grid";
 
 // importing the product data
 import { products } from '../../data';
+
+// importing from react router dom
+import { Link } from 'react-router-dom';
 
 // column definitions for product page
 const columns: GridColDef[] = [
@@ -69,18 +72,19 @@ const columns: GridColDef[] = [
 
 const Products = () => {
     // useState for the add modal
-    const [open, setOpen] = useState(false);
+    // const [open, setOpen] = useState(false);
   
     return (
       <div className="products">
         <div className="info">
           <h1>Products</h1>
-          <button onClick={() => setOpen(true)}>Add New Products</button>
+          {/* <button onClick={() => setOpen(true)}>Add New Products</button> */}
+          <button><Link to="/new/users">Add new user</Link></button>
         </div>
         {/* displays the product datatable using material UI */}
         <DataTable slug="products" columns={columns} rows={products} />
         {/* opens the dynamic add product modal */}
-        {open && <Add slug="product" columns={columns} setOpen={setOpen} />}
+        {/* {open && <Add slug="product" columns={columns} setOpen={setOpen} />} */}
       </div>
     );
   };

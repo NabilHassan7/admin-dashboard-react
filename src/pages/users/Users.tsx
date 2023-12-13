@@ -1,9 +1,9 @@
 // importing from react
-import {useState} from 'react';
+// import {useState} from 'react';
 
 // importing the components
 import DataTable from '../../components/dataTable/DataTable';
-import Add from '../../components/add/Add';
+// import Add from '../../components/add/Add';
 
 // importing from material UI
 import { GridColDef } from "@mui/x-data-grid";
@@ -18,6 +18,9 @@ import './users.scss'
 // USE WHEN USING API
 // importing from react query
 import { useQuery } from "react-query";
+
+// importing from react router dom
+import { Link } from 'react-router-dom';
 
 // column defintions for the Material UI datagrid
 const columns: GridColDef[] = [
@@ -88,7 +91,7 @@ const columns: GridColDef[] = [
 const Users = () => {
 
     // useState for the add modal -> default value is false
-    const [open, setOpen] = useState(false)
+    // const [open, setOpen] = useState(false)
 
     // IF USING API CALL 
     const { isLoading, data } = useQuery({
@@ -104,7 +107,8 @@ const Users = () => {
             <div className="info">
                 <h1>Users</h1>
                 {/* opens the add modal on click */}
-                <button onClick={()=>setOpen(true)}>Add new user</button>
+                {/* <button onClick={()=>setOpen(true)}><Link to="/new/users">Add new user</Link></button> */}
+                <button><Link to="/new/users">Add new user</Link></button>
             </div>
             {/* passing the data as props to display dynamically */}
 
@@ -120,7 +124,7 @@ const Users = () => {
 
             {/* if open show add component */}
             {/* passing the values to child component */}
-            {open && <Add slug="user" columns={columns} setOpen={setOpen}></Add>}
+            {/* {open && <Add slug="user" columns={columns} setOpen={setOpen}></Add>} */}
         </div>
     );
 };

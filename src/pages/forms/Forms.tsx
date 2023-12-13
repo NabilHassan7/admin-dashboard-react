@@ -8,12 +8,20 @@ const Forms = () => {
         <div>
             <div className='forms'>
                 <div className='newUser'>
-                    Create new user
-                    <Link to={'/new/users'}>Create new user</Link>
+                    <div>
+                        <h1>Create new user</h1>
+                    </div>
+                    <div>
+                        <Link to={'/new/users'}>Create new user</Link>
+                    </div>
                 </div>
                 <div className='newProduct'>
-                    Create new product
-                    <Link to={'/new/users'}>Create new products</Link>
+                    <div>
+                        <h1>Create new user</h1>
+                    </div>
+                    <div>
+                        <Link to={'/new/products'}>Create new products</Link>
+                    </div>
                 </div>
             </div>
         </div>
