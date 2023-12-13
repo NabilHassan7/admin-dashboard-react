@@ -1,0 +1,19 @@
+.order{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    gap: 10px;
+
+    div{
+        background-color: white;
+        height: 80vh;
+        color: black;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        h1{
+            padding: 10px;
+        }
+    }
+}

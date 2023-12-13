@@ -1,6 +1,9 @@
 // importing from react router dom
 import { createBrowserRouter } from "react-router-dom";
 
+// importing the data for user and product creation
+import { productInputs, userInputs } from "../data";
+
 // importing the components
 import Main from "../layout/main";
 // import Footer from "../components/footer/Footer";
@@ -15,8 +18,9 @@ import Product from "../pages/product/Product";
 import Scheduler from "../pages/scheduler/Scheduler";
 import PrivateRoute from "./PrivateRoute";
 import New from "../pages/new/New";
-import { productInputs, userInputs } from "../data";
 import Forms from "../pages/forms/Forms";
+import Orders from "../pages/orders/Orders";
+import Order from "../pages/order/Order";
 
 
 export const router = createBrowserRouter([
@@ -53,6 +57,15 @@ export const router = createBrowserRouter([
           {
             path: "/products/:id",
             element: <Product></Product>
+          },
+          {
+            path: "/orders",
+            element: <Orders></Orders>
+          },
+          // for a single specific order
+          {
+            path: "/orders/:id",
+            element: <Order></Order>
           },
           // for the calendar
           {
