@@ -79,7 +79,7 @@ const Products = () => {
         <div className="info">
           <h1>Products</h1>
           {/* <button onClick={() => setOpen(true)}>Add New Products</button> */}
-          <button><Link to="/new/users">Add new user</Link></button>
+          <button><Link to="/new/products">Add new product</Link></button>
         </div>
         {/* displays the product datatable using material UI */}
         <DataTable slug="products" columns={columns} rows={products} />

@@ -7,20 +7,20 @@ const Forms = () => {
     return (
         <div>
             <div className='forms'>
-                <div className='newUser'>
+                <div className='createUser'>
                     <div>
                         <h1>Create new user</h1>
                     </div>
                     <div>
-                        <Link to={'/new/users'}>Create new user</Link>
+                        <button className='userButton'><Link to={'/new/users'}>Create new user</Link></button>
                     </div>
                 </div>
-                <div className='newProduct'>
+                <div className='createProduct'>
                     <div>
-                        <h1>Create new user</h1>
+                        <h1>Create new product</h1>
                     </div>
                     <div>
-                        <Link to={'/new/products'}>Create new products</Link>
+                        <button className='productButton'><Link to={'/new/products'}>Create new product</Link></button>
                     </div>
                 </div>
             </div>

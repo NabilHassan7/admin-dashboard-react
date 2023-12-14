@@ -2,11 +2,42 @@
 import "./newUser.scss"
 
 // import DriveFolderUploadOutlinedIcon from "@mui/material";
-import { useState } from "react";
+import { useContext, useState } from "react";
+
+// importing from react-hook-form
+import { useForm } from "react-hook-form";
+import { AuthContext } from "../../providers/AuthProvider";
+import { useLocation, useNavigate } from "react-router-dom";
 
 // @ts-ignore
 const NewUser = ({ inputs, title }) => {
     const [file, setFile] = useState("");
+
+    // importing for form validation
+    const {
+        register,
+        handleSubmit,
+        // watch,
+        // formState: { errors },
+    } = useForm();
+
+    // @ts-ignore
+    const {createUser} = useContext(AuthContext);
+
+    const navigate = useNavigate();
+    const location = useLocation();
+    const from = location.state?.from?.pathname || "/users";
+
+    // handling the created user
+    const onSubmit = (data : any) => {
+      // console.log(data);
+      createUser(data.email, data.password)
+      .then( (result : any) => {
+          const loggedUser = result.user;
+          console.log(loggedUser);
+          navigate(from, {replace: true});
+      })
+    }
   
     return (
       <div className="newUser">
@@ -29,7 +60,7 @@ const NewUser = ({ inputs, title }) => {
               />
             </div>
             <div className="right">
-              <form>
+              <form onSubmit={handleSubmit(onSubmit)}>
                 <div className="formInput">
                   <label htmlFor="file">
                     {/* Image: <DriveFolderUploadOutlinedIcon className="icon" /> */}
@@ -47,7 +78,8 @@ const NewUser = ({ inputs, title }) => {
                 {inputs.map((input : any) => (
                   <div className="formInput" key={input.id}>
                     <label>{input.label}</label>
-                    <input type={input.type} placeholder={input.placeholder} />
+                    <input {...register(`${input.name}` , { required: true })} name={input?.name} type={input.type} placeholder={input.placeholder} />
+                    {/* {errors.password && <span>Field is required</span>} */}
                   </div>
                 ))}
                 {/* <button>Send</button> */}

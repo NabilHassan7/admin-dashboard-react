@@ -4,9 +4,20 @@ import "./new.scss"
 // import DriveFolderUploadOutlinedIcon from "@mui/material";
 import { useState } from "react";
 
+// importing from react-hook-form
+import { useForm } from "react-hook-form";
+
 // @ts-ignore
 const New = ({ inputs, title }) => {
     const [file, setFile] = useState("");
+
+    // importing for form validation
+    const {
+        register,
+        handleSubmit,
+        // watch,
+        formState: { errors },
+    } = useForm();
   
     return (
       <div className="new">

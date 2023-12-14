@@ -1,5 +1,102 @@
 .forms{
     display: flex;
-    flex-direction: row;
+    justify-content: center;
+    // align-items: center;
+    width: 100%;
+    flex-direction: column;
     gap: 20px;
+    
+    .createUser{
+        border: 2px solid red;
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+
+        .userButton {
+            background: purple;
+            color: yellow;
+            border: 2px solid royalblue;
+            text-transform: uppercase;
+            position: relative;
+            z-index: 1;
+            transition: color 400ms;
+            width: 400px;
+            padding: 20px;
+            font-size: 20px;
+            font-weight: 700;
+            cursor: pointer;
+            border: none;
+        }
+        
+        .userButton::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: royalblue;
+            z-index: -1;
+            transition: transform 400ms ease-out;
+            transform: scaleX(0);
+            transform-origin: left;
+        }
+        
+        .userButton:hover::before {
+           transform: scaleX(1);
+        }
+        
+        .userButton:hover {
+            color: #fff;
+        }
+    }
+
+    .createProduct{
+        // background-color: white;
+        // color: black;
+        border: 2px solid red;
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+
+        .productButton {
+            background: #fff;
+            color: royalblue;
+            border: 2px solid royalblue;
+            text-transform: uppercase;
+            position: relative;
+            z-index: 1;
+            transition: color 400ms;
+            width: 400px;;
+            padding: 20px;
+            font-size: 20px;
+            font-weight: 700;
+            cursor: pointer;
+            border: none;
+        }
+        
+        .productButton::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: royalblue;
+            z-index: -1;
+            transition: transform 400ms ease-out;
+            transform: scaleX(0);
+            transform-origin: left;
+        }
+        
+        .productButton:hover::before {
+           transform: scaleX(1);
+        }
+        
+        .productButton:hover {
+            color: #fff;
+        }
+    }
 }
