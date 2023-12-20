@@ -963,6 +963,7 @@ export const userInputs = [
   },
 ];
 
+// Older user creation input fields
 // Replace depending on the input fields that we want to store
 // export const userInputs = [
 //   {

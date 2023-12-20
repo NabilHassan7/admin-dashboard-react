@@ -68,6 +68,10 @@ export const router = createBrowserRouter([
             path: "/orders/:id",
             element: <Order></Order>
           },
+          // {
+          //   path: "/orders",
+          //   element: <Order></Order>
+          // },
           // for the calendar
           {
             path: "/calendar",

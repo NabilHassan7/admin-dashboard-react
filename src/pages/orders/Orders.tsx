@@ -11,8 +11,13 @@ import DataTable from '../../components/dataTable/DataTable';
 // importing from Material UI
 import { GridColDef } from '@mui/x-data-grid';
 
+// WHEN NOT USING API
 // importing the order data
-import { orders } from '../../data';
+// import { orders } from '../../data';
+
+// USE WHEN USING API
+// importing from react query
+import { useQuery } from "react-query";
 
 // column definitions for order page
 const columns: GridColDef[] = [
@@ -95,6 +100,15 @@ const Orders = () => {
     // useState for the add modal
     // const [open, setOpen] = useState(false);
 
+    // IF USING API CALL 
+    const { isLoading, data } = useQuery({
+      queryKey: ["allorders"],
+      queryFn: () =>
+        fetch("http://localhost:5000/orders").then(
+          (res) => res.json()
+        ),
+    });
+
     return (
         <div className="orders">
             <div className="info">
@@ -102,7 +116,14 @@ const Orders = () => {
                 {/* <button onClick={() => setOpen(true)}>View All Current Orders</button> */}
             </div>
             {/* displays the order datatable using material UI */}
-            <DataTable slug="orders" columns={columns} rows={orders} />
+            {/* <DataTable slug="orders" columns={columns} rows={orders} /> */}
+
+            {/* WHEN USING API */}
+            {isLoading ? (
+              "Loading..."
+            ) : (
+              <DataTable slug="orders" columns={columns} rows={data} />
+            )}
             {/* opens the dynamic add product modal */}
             {/* {open && <Add slug="product" columns={columns} setOpen={setOpen} />} */}
         </div>

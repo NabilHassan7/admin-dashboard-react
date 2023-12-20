@@ -51,9 +51,17 @@ const DataTable = (props: Props) => {
         renderCell: (params) => {
           return (
             <div className="action">
-              <Link to={`/${props.slug}/${params.row.id}`}>
+                {/* conditional rendering */}
+                {props.slug == "orders" ? (
+                    <Link to="/order"></Link>
+                ) : (
+                    <Link to={`/${props.slug}/${params.row.id}`}>
+                        <img src="/view.svg" alt="" />
+                    </Link>
+                )}
+              {/* <Link to={`/${props.slug}/${params.row.id}`}>
                 <img src="/view.svg" alt="" />
-              </Link>
+              </Link> */}
               <div className="delete" onClick={() => handleDelete(params.row.id)}>
                 <img src="/delete.svg" alt="" />
               </div>
