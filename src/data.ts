@@ -1,15 +1,15 @@
 /* Data Items in order
-1. Vertical Menu Items
-2. TopBox Item Data - Top Deal Users
+1. menu
+2. TopBox Item Data - Top Deal Users [moved to API]
 3. chartBox Data - Sales and Revenue analytics / bar graph 1
 4. chartBoxProduct - bar graph 2
 5. chartBoxRevenue - Line graph 1
 6. chartBoxConversion - Line graph 2
 7. barChartBoxRevenue - Bar graph 1
 8. barChartBoxVisit - Bar graph 2
-9. userRows - user data
+9. userRows - user data [moved to API]
 10. products - product data
-11. orders - order data
+11. orders - order data [moved to API]
 12. singleUser - Profile page information
 13. singleProduct - Single Product information page
 13. userInputs - user creation form input
