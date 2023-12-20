@@ -1,3 +1,21 @@
+/* Data Items in order
+1. Vertical Menu Items
+2. TopBox Item Data - Top Deal Users
+3. chartBox Data - Sales and Revenue analytics / bar graph 1
+4. chartBoxProduct - bar graph 2
+5. chartBoxRevenue - Line graph 1
+6. chartBoxConversion - Line graph 2
+7. barChartBoxRevenue - Bar graph 1
+8. barChartBoxVisit - Bar graph 2
+9. userRows - user data
+10. products - product data
+11. orders - order data
+12. singleUser - Profile page information
+13. singleProduct - Single Product information page
+13. userInputs - user creation form input
+14. productInputs - product page creation form
+*/
+
 // vertical menu items -> can be kept local
 export const menu = [
     {
@@ -817,54 +835,186 @@ export const singleProduct = {
 export const userInputs = [
   {
     id: 1,
-    label: "Username",
+    label: "Image Link",
     type: "text",
-    name: "username",
-    placeholder: "john_doe",
-    required: true,
+    name: "img",
+    placeholder: "Image Link",
+    // required: true,
   },
   {
     id: 2,
-    label: "Name and surname",
+    label: "Client ID",
     type: "text",
-    name: "fullname",
-    placeholder: "John Doe",
+    name: "clientId",
+    placeholder: "0000",
+    // required: true,
   },
   {
     id: 3,
-    label: "Email",
-    type: "mail",
-    name: "email",
-    placeholder: "john_doe@gmail.com",
+    label: "Client Name",
+    type: "text",
+    name: "clientName",
+    placeholder: "John Doe",
+    // required: true,
   },
   {
     id: 4,
-    label: "Phone",
+    label: "Credentials",
     type: "text",
-    name: "phone",
-    placeholder: "+1 234 567 89",
+    name: "clientCredentials",
+    placeholder: "john_doe",
+    // required: true,
   },
   {
     id: 5,
-    label: "Password",
-    type: "password",
-    name: "password",
+    label: "Brand ID",
+    type: "text",
+    name: "brandId",
+    placeholder: "0000",
+    // required: true,
   },
   {
     id: 6,
-    label: "Address",
+    label: "Brand Name",
     type: "text",
-    name: "address",
-    placeholder: "Elton St. 216 NewYork",
+    name: "brandName",
+    placeholder: "John Doe",
+    // required: true,
   },
   {
     id: 7,
-    label: "Country",
+    label: "Current Address",
     type: "text",
-    name: "country",
-    placeholder: "USA",
+    name: "address",
+    placeholder: "Current Address",
+    // required: true,
+  },
+  {
+    id: 8,
+    label: "Contact Person",
+    type: "text",
+    name: "contactPerson",
+    placeholder: "john doe",
+    // required: true,
+  },
+  {
+    id: 9,
+    label: "Contact Phone",
+    type: "text",
+    name: "contactPhone",
+    placeholder: "000000",
+    // required: true,
+  },
+  {
+    id: 10,
+    label: "Contact Email",
+    type: "email",
+    name: "contactEmail",
+    placeholder: "example@email.com",
+    // required: true,
+  },
+  {
+    id: 11,
+    label: "Sales Person",
+    type: "text",
+    name: "sales",
+    placeholder: "john doe",
+    // required: true,
+  },
+  {
+    id: 12,
+    label: "Customer Service",
+    type: "text",
+    name: "customerService",
+    placeholder: "john doe",
+    // required: true,
+  },
+  {
+    id: 13,
+    label: "Credit Limit",
+    type: "text",
+    name: "creditLimit",
+    placeholder: "00000",
+    // required: true,
+  },
+  {
+    id: 14,
+    label: "Account Email",
+    type: "email",
+    name: "email",
+    placeholder: "example@email.com",
+    // required: true,
+  },
+  {
+    id: 15,
+    label: "Password",
+    type: "password",
+    name: "password",
+    placeholder: "Enter the password",
+    // required: true,
+  },
+  {
+    id: 16,
+    label: "Created By",
+    type: "text",
+    name: "createdBy",
+    placeholder: "Admin-1",
+    // required: true,
   },
 ];
+
+// Replace depending on the input fields that we want to store
+// export const userInputs = [
+//   {
+//     id: 1,
+//     label: "Username",
+//     type: "text",
+//     name: "username",
+//     placeholder: "john_doe",
+//     // required: true,
+//   },
+//   {
+//     id: 2,
+//     label: "Name and surname",
+//     type: "text",
+//     name: "fullname",
+//     placeholder: "John Doe",
+//   },
+//   {
+//     id: 3,
+//     label: "Email",
+//     type: "mail",
+//     name: "email",
+//     placeholder: "john_doe@gmail.com",
+//   },
+//   {
+//     id: 4,
+//     label: "Phone",
+//     type: "text",
+//     name: "phone",
+//     placeholder: "+1 234 567 89",
+//   },
+//   {
+//     id: 5,
+//     label: "Password",
+//     type: "password",
+//     name: "password",
+//   },
+//   {
+//     id: 6,
+//     label: "Address",
+//     type: "text",
+//     name: "address",
+//     placeholder: "Elton St. 216 NewYork",
+//   },
+//   {
+//     id: 7,
+//     label: "Country",
+//     type: "text",
+//     name: "country",
+//     placeholder: "USA",
+//   },
+// ];
 
 export const productInputs = [
   {

@@ -18,3 +18,5 @@ Steps in order
 10. npm i react-simple-captcha
 11. npm install firebase
 12. npm install react-hook-form
+13. npm i uuid
+14. npm i axios

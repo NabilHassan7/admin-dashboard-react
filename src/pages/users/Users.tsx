@@ -24,56 +24,163 @@ import { Link } from 'react-router-dom';
 
 // column defintions for the Material UI datagrid
 const columns: GridColDef[] = [
-    { 
-        field: "id", 
-        headerName: "ID", 
-        width: 90 
+  { 
+      field: "id", 
+      headerName: "ID", 
+      width: 90 
+  },
+  {
+    field: "img",
+    headerName: "Avatar",
+    width: 100,
+    renderCell: (params) => {
+      return <img src={params.row.img || "/noavatar.png"} alt="" />;
     },
-    {
-      field: "img",
-      headerName: "Avatar",
-      width: 100,
-      renderCell: (params) => {
-        return <img src={params.row.img || "/noavatar.png"} alt="" />;
-      },
-    },
-    {
-      field: "firstName",
-      type: "string",
-      headerName: "First name",
-      width: 150,
-    },
-    {
-      field: "lastName",
-      type: "string",
-      headerName: "Last name",
-      width: 150,
-    },
-    {
-      field: "email",
-      type: "string",
-      headerName: "Email",
-      width: 200,
-    },
-    {
-      field: "phone",
-      type: "string",
-      headerName: "Phone",
-      width: 200,
-    },
-    {
-      field: "createdAt",
-      headerName: "Created At",
-      width: 200,
-      type: "string",
-    },
-    {
-      field: "verified",
-      headerName: "Verified",
-      width: 150,
-      type: "boolean",
-    },
-  ]
+  },
+  {
+    field: "clientId",
+    type: "string",
+    headerName: "Client ID",
+    width: 150,
+  },
+  {
+    field: "clientName",
+    type: "string",
+    headerName: "Client Name",
+    width: 150,
+  },
+  {
+    field: "clientCredentials",
+    type: "string",
+    headerName: "Credentials",
+    width: 150,
+  },
+  {
+    field: "brandId",
+    type: "string",
+    headerName: "Brand ID",
+    width: 150,
+  },
+  {
+    field: "brandName",
+    type: "string",
+    headerName: "Brand Name",
+    width: 150,
+  },
+  {
+    field: "address",
+    type: "string",
+    headerName: "Present Address",
+    width: 150,
+  },
+  {
+    field: "contactPerson",
+    type: "string",
+    headerName: "Contact Person",
+    width: 150,
+  },
+  {
+    field: "contactPhone",
+    type: "string",
+    headerName: "Phone",
+    width: 150,
+  },
+  {
+    field: "contactEmail",
+    type: "string",
+    headerName: "Contact Email",
+    width: 150,
+  },
+  {
+    field: "sales",
+    type: "string",
+    headerName: "Salesperson",
+    width: 150,
+  },
+  {
+    field: "customerService",
+    type: "string",
+    headerName: "Customer Service",
+    width: 150,
+  },
+  {
+    field: "creditLimit",
+    type: "string",
+    headerName: "Credit Limit",
+    width: 150,
+  },
+  {
+    field: "email",
+    type: "string",
+    headerName: "Email",
+    width: 150,
+  },
+  {
+    field: "password",
+    type: "string",
+    headerName: "Password",
+    width: 150,
+  },
+  {
+    field: "createdBy",
+    type: "string",
+    headerName: "Created By",
+    width: 150,
+  }
+]
+
+// column defintions for the Material UI datagrid
+// const columns: GridColDef[] = [
+//     { 
+//         field: "id", 
+//         headerName: "ID", 
+//         width: 90 
+//     },
+//     {
+//       field: "img",
+//       headerName: "Avatar",
+//       width: 100,
+//       renderCell: (params) => {
+//         return <img src={params.row.img || "/noavatar.png"} alt="" />;
+//       },
+//     },
+//     {
+//       field: "firstName",
+//       type: "string",
+//       headerName: "First name",
+//       width: 150,
+//     },
+//     {
+//       field: "lastName",
+//       type: "string",
+//       headerName: "Last name",
+//       width: 150,
+//     },
+//     {
+//       field: "email",
+//       type: "string",
+//       headerName: "Email",
+//       width: 200,
+//     },
+//     {
+//       field: "phone",
+//       type: "string",
+//       headerName: "Phone",
+//       width: 200,
+//     },
+//     {
+//       field: "createdAt",
+//       headerName: "Created At",
+//       width: 200,
+//       type: "string",
+//     },
+//     {
+//       field: "verified",
+//       headerName: "Verified",
+//       width: 150,
+//       type: "boolean",
+//     },
+//   ]
 
 // Data Grid Dummy Data
 // const rows = [
