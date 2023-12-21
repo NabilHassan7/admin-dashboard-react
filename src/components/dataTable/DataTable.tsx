@@ -52,19 +52,25 @@ const DataTable = (props: Props) => {
           return (
             <div className="action">
                 {/* conditional rendering */}
-                {props.slug == "orders" ? (
-                    <Link to="/order"></Link>
+                {/* {props.slug == "orders" ? (
+                    <Link to={`/${props.slug}/${params.row.id}`}>
+                        <img src="/view.svg" alt="" />
+                    </Link>
                 ) : (
                     <Link to={`/${props.slug}/${params.row.id}`}>
                         <img src="/view.svg" alt="" />
                     </Link>
-                )}
-              {/* <Link to={`/${props.slug}/${params.row.id}`}>
-                <img src="/view.svg" alt="" />
-              </Link> */}
-              <div className="delete" onClick={() => handleDelete(params.row.id)}>
-                <img src="/delete.svg" alt="" />
-              </div>
+                )} */}
+                {/* individual view button */}
+                <div>
+                    <Link to={`/${props.slug}/${params.row.id}`}>
+                        <img src="/view.svg" alt="" />
+                    </Link>
+                </div>
+                {/* delete individual button */}
+                <div className="delete" onClick={() => handleDelete(params.row.id)}>
+                    <img src="/delete.svg" alt="" />
+                </div>
             </div>
           );
         },
