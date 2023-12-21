@@ -20,3 +20,4 @@ Steps in order
 12. npm install react-hook-form
 13. npm i uuid
 14. npm i axios
+15. npm i sweetalert2

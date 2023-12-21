@@ -1,5 +1,5 @@
 /* Data Items in order
-1. menu
+1. menu [keeping local]
 2. TopBox Item Data - Top Deal Users [moved to API]
 3. chartBox Data - Sales and Revenue analytics / bar graph 1 [moved to API]
 4. chartBoxProduct - bar graph 2 [moved to API]
@@ -8,12 +8,12 @@
 7. barChartBoxRevenue - Bar graph 1 [moved to API]
 8. barChartBoxVisit - Bar graph 2 [moved to API]
 9. userRows - user data [moved to API]
-10. products - product data
+10. products - product data 
 11. orders - order data [moved to API]
-12. singleUser - Profile page information
-13. singleProduct - Single Product information page
-13. userInputs - user creation form input
-14. productInputs - product page creation form
+12. singleUser - Profile page information [moved to API]
+13. singleProduct - Single Product information page [moved to API]
+13. userInputs - user creation form input [keeping local]
+14. productInputs - product page creation form [keeping local]
 */
 
 // vertical menu items -> can be kept local

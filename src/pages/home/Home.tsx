@@ -75,8 +75,6 @@ const Home = () => {
       ]
     );
 
-    console.log(totalUsers);
-
     return (
       <div className="home">
         {/* Most recent order */}

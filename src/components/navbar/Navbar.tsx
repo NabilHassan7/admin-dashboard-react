@@ -1,7 +1,46 @@
 // importing css file
+import { useContext } from 'react';
 import './navbar.scss'
+import { AuthContext } from '../../providers/AuthProvider';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
+
+import Swal from 'sweetalert2';
 
 const Navbar = () => {
+    const navigate = useNavigate();
+    const location = useLocation();
+    const from = location.state?.from?.pathname || "/";
+
+    // @ts-ignore
+    const { user, logOut } = useContext(AuthContext);
+
+    const handleLogout = () => {
+        logOut()
+        .then(() => {
+            navigate(from, {replace: true});
+            Swal.fire({
+                title: "You have been logged out",
+                showClass: {
+                  popup: `
+                    animate__animated
+                    animate__fadeInUp
+                    animate__faster
+                  `
+                },
+                hideClass: {
+                  popup: `
+                    animate__animated
+                    animate__fadeOutDown
+                    animate__faster
+                  `
+                }
+              });
+        })
+        .catch((error:any) => {
+            console.log(error);
+        })
+    }
+
     return (
         <div className='navbar'>
             <div className="logo">
@@ -23,7 +62,21 @@ const Navbar = () => {
                         alt=""
                     />
                     {/* User Name */}
-                    <span>Jane</span>
+                    <span>{user?.email}</span>
+                    {
+                        user ? 
+                        <>
+                            <button onClick={handleLogout}>
+                                Logout
+                            </button>
+                        </> 
+                        : 
+                        <>
+                            <button>
+                                <Link to={"/"}>Login</Link>
+                            </button>
+                        </>
+                    }
                 </div>
                 <img src="/settings.svg" alt="" className="icon" />
             </div>
