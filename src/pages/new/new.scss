@@ -49,6 +49,8 @@
             flex-wrap: wrap;
             gap: 30px;
             justify-content: space-around;
+            height:600px;
+            overflow-y:auto;
   
             .formInput {
               width: 40%;
